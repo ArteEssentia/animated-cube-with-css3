@@ -1,0 +1,189 @@
+@charset "utf-8";
+/* CSS Document */
+/* -webkit: Chrome Safari Opera */
+/* -moz: Firefox */
+/* -ms: Internet Explorer */
+
+/* set BG-color and font */
+body {
+	background: #F9F9F9;
+	font-family: 'Oxygen', sans-serif;
+}
+
+/* set width and center */
+#wrapper {
+	width: 900px;
+	margin: 100px auto;
+}
+
+/* set the initial perspective of the cube-wrapper */
+#cube-wrapper {
+	position: relative;
+	-webkit-perspective: 500px;
+	-moz-perspective: 500px;
+	-ms-perspective: 500px;
+	perspective: 500px;
+	-webkit-perspective-origin: 50% 100px;
+	-moz-perspective-origin: 50% 100px;
+	-ms-perspective-origin: 50% 100px;
+	perspective-origin: 50% 100px;
+}
+
+/* set keyframes for rotating animation */
+@-webkit-keyframes spinTheCube {
+	from { -webkit-transform: rotateY(0) }
+	to { -webkit-transform: rotateY(360deg)	}
+}
+@-moz-keyframes spinTheCube {
+	from { -moz-transform: rotateY(0) }
+	to { -moz-transform: rotateY(360deg) }
+}
+@keyframes spinTheCube {
+	from { transform: rotateY(0) }
+	to { transform: rotateY(360deg)	}
+}
+
+/* now set the cube and call the spin animation */
+#cube {
+	position: relative;
+	width: 200px;
+	margin: 0 auto;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-animation: spinTheCube 4s infinite linear;
+	-moz-animation: spinTheCube 4s infinite linear;
+	-ms-animation: spinTheCube 4s infinite linear;
+	animation: spinTheCube 4s infinite linear;
+	-webkit-transition: all 1s linear;
+	-moz-transition: all 1s linear;
+	-ms-transition: all 1s linear;
+	transition: all 1s linear;
+}
+
+/* create the cube sides */
+/* this is a class, because we need it several times */
+.side {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	display: block;
+	background: rgba(255,255,255,0.1);
+	box-shadow: inset 0 0 30px rgba(0,0,0,0.2);
+	font-size:20px;
+	text-align: center;
+	line-height: 200px;
+	color: rgba(0,0,0,0.5);
+	text-transform: uppercase;
+	-webkit-transition: all 1s linear;
+	-moz-transition: all 1s linear;
+	-ms-transition: all 1s linear;
+	transition: all 1s linear;
+}
+
+/* target the individual sides */
+/* we have two classes for side, a universal one and specific one */
+.front {
+	-webkit-transform: translateZ(100px);
+	-moz-transform: translateZ(100px);
+	-ms-transform: translateZ(100px);
+	transform: translateZ(100px);
+}
+
+.back {
+	-webkit-transform: translateZ(-100px) rotateY(180deg);
+	-moz-transform: translateZ(-100px) rotateY(180deg);
+	-ms-transform: translateZ(-100px) rotateY(180deg);
+	transform: translateZ(-100px) rotateY(180deg);
+}
+
+.right {
+	-webkit-transform: rotateY(-270deg) translateX(100px);
+	-moz-transform: rotateY(-270deg) translateX(100px);
+	-ms-transform: rotateY(-270deg) translateX(100px);
+	transform: rotateY(-270deg) translateX(100px);
+	-webkit-transform-origin: top right;
+	-moz-transform-origin: top right;
+	-ms-transform-origin: top right;
+	transform-origin: top right;
+}
+
+.left {
+	-webkit-transform: rotateY(270deg) translateX(-100px);
+	-moz-transform: rotateY(270deg) translateX(-100px);
+	-ms-transform: rotateY(270deg) translateX(-100px);
+	transform: rotateY(270deg) translateX(-100px);
+	-webkit-transform-origin: center left;
+	-moz-transform-origin: center left;
+	-ms-transform-origin: center left;
+	transform-origin: center left;
+}
+
+.top {
+	-webkit-transform: rotateX(-90deg) translateY(-100px);
+	transform: rotateX(-90deg) translateY(-100px);
+	-webkit-transform-origin: top center;
+	transform-origin: top center;
+}
+
+.bottom {
+	-webkit-transform: rotateX(90deg) translateY(100px);
+	-moz-transform: rotateX(90deg) translateY(100px);
+	-ms-transform: rotateX(90deg) translateY(100px);
+	transform: rotateX(90deg) translateY(100px);
+	-webkit-transform-origin: bottom center;
+	-moz-transform-origin: bottom center;
+	-ms-transform-origin: bottom center;
+	transform-origin: bottom center;
+}
+
+/* set keyframes for typing animation for the title */
+@-webkit-keyframes typingTitle {
+	from { width: 0	}
+	to { width: 18em }
+}
+@-moz-keyframes typingTitle {
+	from { width: 0	}
+	to { width: 18em }
+}
+@keyframes typingTitle {
+	from { width: 0	}
+	to { width: 18em }
+}
+
+/* add a blinking cursor */
+@-webkit-keyframes blinkingCursor {
+	from, to { border-right-color: white }
+	50% { border-right-color: black }
+}
+@-moz-keyframes blinkingCursor {
+	from, to { border-right-color: white }
+	50% { border-right-color: black }
+}
+@keyframes blinkingCursor {
+	from, to { border-right-color: white }
+	50% { border-right-color: black }
+}
+
+/* format and animate the logo */
+#logo-text {
+	position: absolute;
+	top: -70px;
+	left: 150px;
+	font-size: 2em;
+	white-space: nowrap;
+	overflow: hidden;
+	border-right: 0.1em solid black;
+	line-height: 1px;
+	-webkit-animation: typingTitle 4s steps(24, end), blinkingCursor 0.8s step-end 4s infinite;
+	-moz-animation: typingTitle 4s steps(24, end), blinkingCursor 0.8s step-end 4s infinite;
+	-ms-animation: typingTitle 4s steps(24, end), blinkingCursor 0.8s step-end 4s infinite;
+	animation: typingTitle 4s steps(24, end), blinkingCursor 0.8s step-end 4s infinite;
+}
+
+/* Accentuate the Name */
+#logo-text #name-color {
+	font-weight: bold;
+	color: #DFC281;
+}
