@@ -1,8 +1,9 @@
 @charset "utf-8";
 /* CSS Document */
-/* -webkit: Chrome Safari Opera */
+/* -webkit: Chrome Safari */
 /* -moz: Firefox */
 /* -ms: Internet Explorer */
+/* -o: Opera */
 
 /* set BG-color and font */
 body {
@@ -22,10 +23,12 @@ body {
 	-webkit-perspective: 500px;
 	-moz-perspective: 500px;
 	-ms-perspective: 500px;
+	-o-perspective: 500px;
 	perspective: 500px;
 	-webkit-perspective-origin: 50% 100px;
 	-moz-perspective-origin: 50% 100px;
 	-ms-perspective-origin: 50% 100px;
+	-o-perspective-origin: 50% 100px;
 	perspective-origin: 50% 100px;
 }
 
@@ -37,6 +40,10 @@ body {
 @-moz-keyframes spinTheCube {
 	from { -moz-transform: rotateY(0) }
 	to { -moz-transform: rotateY(360deg) }
+}
+@-o-keyframes spinTheCube {
+	from { transform: rotateY(0) }
+	to { transform: rotateY(360deg)	}
 }
 @keyframes spinTheCube {
 	from { transform: rotateY(0) }
@@ -51,14 +58,17 @@ body {
 	-webkit-transform-style: preserve-3d;
 	-moz-transform-style: preserve-3d;
 	-ms-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 	-webkit-animation: spinTheCube 4s infinite linear;
 	-moz-animation: spinTheCube 4s infinite linear;
 	-ms-animation: spinTheCube 4s infinite linear;
+	-o-animation: spinTheCube 4s infinite linear;
 	animation: spinTheCube 4s infinite linear;
 	-webkit-transition: all 1s linear;
 	-moz-transition: all 1s linear;
 	-ms-transition: all 1s linear;
+	-o-transition: all 1s linear;
 	transition: all 1s linear;
 }
 
@@ -79,6 +89,7 @@ body {
 	-webkit-transition: all 1s linear;
 	-moz-transition: all 1s linear;
 	-ms-transition: all 1s linear;
+	-o-transition: all 1s linear;
 	transition: all 1s linear;
 }
 
@@ -88,6 +99,7 @@ body {
 	-webkit-transform: translateZ(100px);
 	-moz-transform: translateZ(100px);
 	-ms-transform: translateZ(100px);
+	-o-transform: translateZ(100px);
 	transform: translateZ(100px);
 }
 
@@ -95,6 +107,7 @@ body {
 	-webkit-transform: translateZ(-100px) rotateY(180deg);
 	-moz-transform: translateZ(-100px) rotateY(180deg);
 	-ms-transform: translateZ(-100px) rotateY(180deg);
+	-o-transform: translateZ(-100px) rotateY(180deg);
 	transform: translateZ(-100px) rotateY(180deg);
 }
 
@@ -102,10 +115,12 @@ body {
 	-webkit-transform: rotateY(-270deg) translateX(100px);
 	-moz-transform: rotateY(-270deg) translateX(100px);
 	-ms-transform: rotateY(-270deg) translateX(100px);
+	-o-transform: rotateY(-270deg) translateX(100px);
 	transform: rotateY(-270deg) translateX(100px);
 	-webkit-transform-origin: top right;
 	-moz-transform-origin: top right;
 	-ms-transform-origin: top right;
+	-o-transform-origin: top right;
 	transform-origin: top right;
 }
 
@@ -113,17 +128,25 @@ body {
 	-webkit-transform: rotateY(270deg) translateX(-100px);
 	-moz-transform: rotateY(270deg) translateX(-100px);
 	-ms-transform: rotateY(270deg) translateX(-100px);
+	-o-transform: rotateY(270deg) translateX(-100px);
 	transform: rotateY(270deg) translateX(-100px);
 	-webkit-transform-origin: center left;
 	-moz-transform-origin: center left;
 	-ms-transform-origin: center left;
+	-o-transform-origin: center left;
 	transform-origin: center left;
 }
 
 .top {
 	-webkit-transform: rotateX(-90deg) translateY(-100px);
+	-moz-transform: rotateX(-90deg) translateY(-100px);
+	-ms-transform: rotateX(-90deg) translateY(-100px);
+	-o-transform: rotateX(-90deg) translateY(-100px);
 	transform: rotateX(-90deg) translateY(-100px);
 	-webkit-transform-origin: top center;
+	-moz-transform-origin: top center;
+	-ms-transform-origin: top center;
+	-o-transform-origin: top center;
 	transform-origin: top center;
 }
 
@@ -131,10 +154,12 @@ body {
 	-webkit-transform: rotateX(90deg) translateY(100px);
 	-moz-transform: rotateX(90deg) translateY(100px);
 	-ms-transform: rotateX(90deg) translateY(100px);
+	-o-transform: rotateX(90deg) translateY(100px);
 	transform: rotateX(90deg) translateY(100px);
 	-webkit-transform-origin: bottom center;
 	-moz-transform-origin: bottom center;
 	-ms-transform-origin: bottom center;
+	-o-transform-origin: bottom center;
 	transform-origin: bottom center;
 }
 
@@ -144,6 +169,10 @@ body {
 	to { width: 18em }
 }
 @-moz-keyframes typingTitle {
+	from { width: 0	}
+	to { width: 18em }
+}
+@-o-keyframes typingTitle {
 	from { width: 0	}
 	to { width: 18em }
 }
@@ -158,6 +187,10 @@ body {
 	50% { border-right-color: black }
 }
 @-moz-keyframes blinkingCursor {
+	from, to { border-right-color: white }
+	50% { border-right-color: black }
+}
+@-o-keyframes blinkingCursor {
 	from, to { border-right-color: white }
 	50% { border-right-color: black }
 }
@@ -179,6 +212,7 @@ body {
 	-webkit-animation: typingTitle 4s steps(24, end), blinkingCursor 0.8s step-end 4s infinite;
 	-moz-animation: typingTitle 4s steps(24, end), blinkingCursor 0.8s step-end 4s infinite;
 	-ms-animation: typingTitle 4s steps(24, end), blinkingCursor 0.8s step-end 4s infinite;
+	-o-animation: typingTitle 4s steps(24, end), blinkingCursor 0.8s step-end 4s infinite;
 	animation: typingTitle 4s steps(24, end), blinkingCursor 0.8s step-end 4s infinite;
 }
 
