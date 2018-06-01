@@ -34,5 +34,5 @@ This builds the planes that form the basic cube.
 ### Extra
 As an added bonus the logo text is animated as well, just like a typewriter.
 
-## [View the published result](https://arteessentia.github.io/animated-cube-with-css3/) 
+## [View the published result](https://vincentklijn.github.io/animated-cube-with-css3/) 
 (This will work in most browsers, but IE will only show a flattened version of the spinning cube)
